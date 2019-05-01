@@ -36,11 +36,11 @@
 \setbeamercolor{title in head/foot}{fg=white,     bg=TitleBGColor}
 \setbeamercolor{date in head/foot} {fg=white,     bg=TitleBGColor}
 
-\setbeamercolor{normal text}            {fg=TextColor, bg=white}
-\setbeamercolor{caption name}           {fg=TextColor, bg=white}
-\setbeamercolor{caption}                {fg=TextColor, bg=white}
-\setbeamercolor{section in head/foot}   {fg=white,     bg=TitleBGColor}
-\setbeamercolor{subsection in head/foot}{fg=white,     bg=TitleBGColor}
+\setbeamercolor{normal text}            {fg=TextColor,    bg=white}
+\setbeamercolor{caption name}           {fg=TextColor,    bg=white}
+\setbeamercolor{caption}                {fg=TextColor,    bg=white}
+\setbeamercolor{section in head/foot}   {fg=white,        bg=TitleBGColor}
+\setbeamercolor{subsection in head/foot}{fg=white,        bg=TitleBGColor}
 \setbeamercolor{item}                   {fg=TitleBGColor, bg=TitleBGColor}
 \setbeamercolor{section in toc}         {fg=TitleBGColor}
 \setbeamercolor*{separation line}{}
@@ -50,64 +50,40 @@
 \setbeamertemplate{item}[ball]
 \setbeamertemplate{enumerate items}[default]
 
-\setbeamerfont{title}      {series=\bfseries}
-\setbeamerfont{frametitle} {series=\bfseries}
-\setbeamerfont{institute}  {size=\Huge}
-\setbeamerfont{author}     {size=\Huge}
+\setbeamerfont{title}              {series=\bfseries}
+\setbeamerfont{frametitle}         {series=\bfseries}
+\setbeamerfont{institute}          {size=\Huge}
+\setbeamerfont{author}             {size=\Huge}
+\setbeamerfont{caption}            {size=\scriptsize}
 \setbeamerfont{title in head/foot} {series=\bfseries}
 \setbeamerfont{date in head/foot}  {series=\bfseries}
 \setbeamertemplate{caption}[numbered]
 \renewcommand{\figurename}{Fig.}
 
-
 \setbeamertemplate{section in toc}[sections numbered]
-
 \setbeamertemplate{blocks}[rounded][shadow=false]
 
 \defbeamertemplate*{footline}{infolines theme}
 {
   \leavevmode%
   \hbox{%
-    \begin{beamercolorbox}[wd=.666667\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}%
-      \usebeamerfont{title in head/foot}\hspace*{2em}
+    \begin{beamercolorbox}[wd=.66\paperwidth,ht=3ex, dp=1ex, left]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\hspace*{2ex}
       \ifx\insertsectionhead\empty\else
-      \insertsectionnumber.\insertsectionhead
+      \insertsectionnumber. \insertsectionhead
     \fi
   \end{beamercolorbox}%
-  %\hspace{-.1\paperwidth}
-  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{3ex}
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=3ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2ex}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
   \end{beamercolorbox}}%
   \vskip0pt%
 }
 
-
-%\defbeamertemplate*{footline}{infolines theme}
-%{
-%  \leavevmode
-%  \hbox{
-%  \begin{beamercolorbox}[wd=.666667\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}%
-%    \usebeamerfont{title in head/foot}\hspace*{2em}
-%    \ifx\insertsectionhead\empty\else
-%    \insertsectionnumber.\insertsectionhead
-%    \fi
-%  \end{beamercolorbox}
-%  \hspace{-.1\paperwidth}
-%  \begin{beamercolorbox}[wd=.433333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-%    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-%    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
-%  \end{beamercolorbox}}
-%  \vskip0pt%
-%}
-%
-\defbeamertemplate*{title page}{title aloha}
+\defbeamertemplate*{title page}{title simple}
 {
-  \vbox{}
-  \vfill
   \begingroup
-  \hspace{-.6cm}
-    \begin{beamercolorbox}[sep=16pt,rounded=true,left,wd=.95\paperwidth,colsep=0bp]{title}
+    \begin{beamercolorbox}[sep=16pt, rounded=true, left, wd=.95\paperwidth]{title}
       \usebeamerfont{title}\inserttitle\par%
       \ifx\insertsubtitle\@empty%
       \else%
@@ -117,22 +93,20 @@
         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
       \fi%
     \end{beamercolorbox}%
-    \vskip1em\par
+
+    \vskip5ex\par
     {\centering
-    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{author}
+    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth]{author}
       \usebeamerfont{author}\insertauthor
     \end{beamercolorbox}
-    \vspace{-.2cm}
-    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{institute}
+    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth]{institute}
       \usebeamerfont{institute}\insertinstitute
     \end{beamercolorbox}
-    \vspace{-.2cm}
-    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{date}
+    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth]{date}
       \usebeamerfont{date}\insertdate
     \end{beamercolorbox}}
     \ifx\inserttitlegraphic\empty\else
-    \vskip-5em
-    \begin{beamercolorbox}[sep=8pt,right,wd=.95\paperwidth,colsep=0bp]{titlegraphic}
+    \begin{beamercolorbox}[sep=8pt,right,wd=.95\paperwidth]{titlegraphic}
         \inserttitlegraphic\par
     \end{beamercolorbox}
     \fi
@@ -140,8 +114,19 @@
   \vfill
 }
 
-
 \setbeamersize{text margin left=1em,text margin right=1em}
+
+\lstset
+{
+  backgroundcolor={\color{CodeBGColor}},
+  basicstyle={\ttfamily\scriptsize},
+  keywordstyle={\color{CodeKeywordColor}},
+  commentstyle={\color{CodeCommentColor}},
+  stringstyle=\color{CodeStringColor},
+  showstringspaces=false,
+  tabsize=2,
+  frame=none
+}
 
 \renewcommand{\vector}[1]{\mbox{\boldmath $#1$}}
 
@@ -149,8 +134,8 @@
 {
   \begin{figure}[h]
     \centering
-    \includegraphics[width=.75\textwidth, height=.6\vsize]{{#1}}
-    \vspace*{-3mm}
+    \includegraphics[width=.70\textwidth, height=.6\vsize]{{#1}}
+    \vspace*{-6mm}
     \caption{#2}
   \end{figure}
 }
@@ -184,16 +169,4 @@
       \end{#1}
     \end{minipage}
   \end{center}
-}
-
-\lstset
-{
-  backgroundcolor={\color{CodeBGColor}},
-  basicstyle={\ttfamily\small},
-  keywordstyle={\color{CodeKeywordColor}},
-  commentstyle={\color{CodeCommentColor}},
-  stringstyle=\color{CodeStringColor},
-  showstringspaces=false,
-  tabsize=2,
-  frame=none
 }
