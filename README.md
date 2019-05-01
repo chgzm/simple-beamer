@@ -4,7 +4,7 @@ Simple beamer style file and macros for adding figures.
 - Includes style for source code.
 - Figures can be inserted easily without complicated commands.
 
-![demo slide](./main.pdf)
+[demo slides](./main.pdf)
 
 # Usage
 ## Minimal setting and title page
