@@ -1,0 +1,199 @@
+\usepackage{helvet}
+\usepackage[no-math]{fontspec}
+\usepackage{listings}
+\usepackage{xltxtra}
+\usepackage{zxjatype}
+\usepackage[ipaex]{zxjafont}
+\setjamainfont{IPAexGothic}
+\setjasansfont{IPAexGothic}
+
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}
+
+% 16:9
+\beamer@paperwidth 170.67mm
+\beamer@paperheight 96.00mm
+
+%\titlegraphic{\includegraphics[width=3cm]{emblem.pdf}}
+
+\makeatletter
+
+\definecolor{AlertColor}       {RGB}{220,  53,  52}
+\definecolor{ExampleColor}     {RGB}{  0, 123, 255}
+\definecolor{TitleBGColor}     {RGB}{ 52,  58,  64}
+\definecolor{TextColor}        {RGB}{ 33,  38,  41}
+\definecolor{CodeBGColor}      {RGB}{239, 240, 241}
+\definecolor{CodeKeywordColor} {RGB}{ 65, 103, 225}
+\definecolor{CodeCommentColor} {RGB}{150, 150, 150}
+\definecolor{CodeStringColor}  {RGB}{125, 39,   39}
+
+\setbeamercolor{alerted text}      {fg=AlertColor}
+\setbeamercolor{example text}      {fg=ExampleColor}
+\setbeamercolor{frametitle}        {fg=white,     bg=TitleBGColor}
+\setbeamercolor{title}             {fg=white,     bg=TitleBGColor}
+\setbeamercolor{author}            {fg=TextColor, bg=white}
+\setbeamercolor{date}              {fg=TextColor, bg=white}
+\setbeamercolor{title in head/foot}{fg=white,     bg=TitleBGColor}
+\setbeamercolor{date in head/foot} {fg=white,     bg=TitleBGColor}
+
+\setbeamercolor{normal text}            {fg=TextColor, bg=white}
+\setbeamercolor{caption name}           {fg=TextColor, bg=white}
+\setbeamercolor{caption}                {fg=TextColor, bg=white}
+\setbeamercolor{section in head/foot}   {fg=white,     bg=TitleBGColor}
+\setbeamercolor{subsection in head/foot}{fg=white,     bg=TitleBGColor}
+\setbeamercolor{item}                   {fg=TitleBGColor, bg=TitleBGColor}
+\setbeamercolor{section in toc}         {fg=TitleBGColor}
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{item}[ball]
+\setbeamertemplate{enumerate items}[default]
+
+\setbeamerfont{title}      {series=\bfseries}
+\setbeamerfont{frametitle} {series=\bfseries}
+\setbeamerfont{institute}  {size=\Huge}
+\setbeamerfont{author}     {size=\Huge}
+\setbeamerfont{title in head/foot} {series=\bfseries}
+\setbeamerfont{date in head/foot}  {series=\bfseries}
+\setbeamertemplate{caption}[numbered]
+\renewcommand{\figurename}{Fig.}
+
+
+\setbeamertemplate{section in toc}[sections numbered]
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\defbeamertemplate*{footline}{infolines theme}
+{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.666667\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\hspace*{2em}
+      \ifx\insertsectionhead\empty\else
+      \insertsectionnumber.\insertsectionhead
+    \fi
+  \end{beamercolorbox}%
+  %\hspace{-.1\paperwidth}
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{3ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+%\defbeamertemplate*{footline}{infolines theme}
+%{
+%  \leavevmode
+%  \hbox{
+%  \begin{beamercolorbox}[wd=.666667\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}%
+%    \usebeamerfont{title in head/foot}\hspace*{2em}
+%    \ifx\insertsectionhead\empty\else
+%    \insertsectionnumber.\insertsectionhead
+%    \fi
+%  \end{beamercolorbox}
+%  \hspace{-.1\paperwidth}
+%  \begin{beamercolorbox}[wd=.433333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+%    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+%  \end{beamercolorbox}}
+%  \vskip0pt%
+%}
+%
+\defbeamertemplate*{title page}{title aloha}
+{
+  \vbox{}
+  \vfill
+  \begingroup
+  \hspace{-.6cm}
+    \begin{beamercolorbox}[sep=16pt,rounded=true,left,wd=.95\paperwidth,colsep=0bp]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip1em%
+        \hrule height 0.1mm depth 0.1mm width .9\textwidth
+        \vskip1em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%
+    \end{beamercolorbox}%
+    \vskip1em\par
+    {\centering
+    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \vspace{-.2cm}
+    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \vspace{-.2cm}
+    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}}
+    \ifx\inserttitlegraphic\empty\else
+    \vskip-5em
+    \begin{beamercolorbox}[sep=8pt,right,wd=.95\paperwidth,colsep=0bp]{titlegraphic}
+        \inserttitlegraphic\par
+    \end{beamercolorbox}
+    \fi
+  \endgroup
+  \vfill
+}
+
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+\renewcommand{\vector}[1]{\mbox{\boldmath $#1$}}
+
+\newcommand{\figonecol}[2]
+{
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=.75\textwidth, height=.6\vsize]{{#1}}
+    \vspace*{-3mm}
+    \caption{#2}
+  \end{figure}
+}
+
+\newcommand{\figtwocol}[4]
+{
+  \begin{figure}
+    \begin{minipage}{.46\hsize}
+      \centering
+      \vspace*{-4mm}
+      \includegraphics[width=\textwidth, height=.5\vsize]{{#1}}
+      \vspace*{-6mm}
+      \caption{#2}
+    \end{minipage}
+    \begin{minipage}{.46\hsize}
+      \centering
+      \vspace*{-4mm}
+      \includegraphics[width=\textwidth, height=.5\vsize]{{#3}}
+      \vspace*{-6mm}
+      \caption{#4}
+    \end{minipage}
+  \end{figure}
+}
+
+\newcommand{\blockCenter}[3]
+{
+  \begin{center}
+    \begin{minipage}{.8\hsize}
+      \begin{#1}{#2}
+       #3
+      \end{#1}
+    \end{minipage}
+  \end{center}
+}
+
+\lstset
+{
+  backgroundcolor={\color{CodeBGColor}},
+  basicstyle={\ttfamily\small},
+  keywordstyle={\color{CodeKeywordColor}},
+  commentstyle={\color{CodeCommentColor}},
+  stringstyle=\color{CodeStringColor},
+  showstringspaces=false,
+  tabsize=2,
+  frame=none
+}
