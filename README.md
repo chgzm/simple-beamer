@@ -6,6 +6,8 @@ Simple beamer style file and macros for adding figures.
 
 [demo slides](./main.pdf)
 
+![current](./sample.png)
+
 # Usage
 ## Minimal setting and title page
 ```
